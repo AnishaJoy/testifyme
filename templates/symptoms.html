@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>TestifyMe - Predicting COVID19 &amp; | Result</title>
+
+    <link rel="icon" href="{{url_for('static', filename='img/core-img/xfavicon.ico.pagespeed.ic.W58SSKXCBF.png')}}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main2.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/animate.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/magnific-popup.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/themify-icons.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style scoped>
+        .whiteText {
+            color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+            padding: 5px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+
+
+    <script
+        nonce="019f1641-c4c1-4c38-b2bc-d675312dcbd1">(function (w, d) { !function (a, e, t, r, z) { a.zarazData = a.zarazData || {}, a.zarazData.executed = [], a.zarazData.tracks = [], a.zaraz = { deferred: [] }; var s = e.getElementsByTagName("title")[0]; s && (a.zarazData.t = e.getElementsByTagName("title")[0].text), a.zarazData.w = a.screen.width, a.zarazData.h = a.screen.height, a.zarazData.j = a.innerHeight, a.zarazData.e = a.innerWidth, a.zarazData.l = a.location.href, a.zarazData.r = e.referrer, a.zarazData.k = a.screen.colorDepth, a.zarazData.n = e.characterSet, a.zarazData.o = (new Date).getTimezoneOffset(), a.dataLayer = a.dataLayer || [], a.zaraz.track = (e, t) => { for (key in a.zarazData.tracks.push(e), t) a.zarazData["z_" + key] = t[key] }, a.zaraz._preSet = [], a.zaraz.set = (e, t, r) => { a.zarazData["z_" + e] = t, a.zaraz._preSet.push([e, t, r]) }, a.dataLayer.push({ "zaraz.start": (new Date).getTime() }), a.addEventListener("DOMContentLoaded", (() => { var t = e.getElementsByTagName(r)[0], z = e.createElement(r); z.defer = !0, z.src = "../../cdn-cgi/zaraz/sd0d9.js" + btoa(encodeURIComponent(JSON.stringify(a.zarazData))), t.parentNode.insertBefore(z, t) })) }(w, d, 0, "script"); })(window, document);</script>
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="medica-load"></div>
+        <img src="{{url_for('static', filename='img/core-img/xplus.png.pagespeed.ic.W58SSKXCBF.png')}}" alt="logo">
+    </div>
+
+    <header class="header-area">
+        <div class="main-header-area" id="stickyHeader">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 h-100">
+                        <div class="main-menu h-100">
+                            <nav class="navbar h-100 navbar-expand-lg">
+
+                                <a class="navbar-brand" href="{{ url_for('home')}}"><img
+                                        src="{{url_for('static', filename='img/core-img/testifyMeLOGO1.png')}}"
+                                        alt="Logo"></a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#medicaMenu" aria-controls="medicaMenu" aria-expanded="false"
+                                    aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
+                                <div class="collapse navbar-collapse" id="medicaMenu">
+
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="{{url_for('home')}}">Home <span
+                                                    class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{ url_for('home')}}">Home</a>
+                                                <a class="dropdown-item" href="{{ url_for('update')}}">Live Update</a>
+                                                <a class="dropdown-item" href="{{ url_for('symptoms')}}">Symptoms</a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ url_for('update')}}">Live Update</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ url_for('symptoms')}}">Symptoms</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- <div class="w3-bar w3-black"> -->
+    <div>
+        <button class="w3-bar-item w3-button" onclick="openCity('Overview')">Overview</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Symptoms')">Symptoms</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Prevention')">Prevention</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Treatments')">Treatments</button>
+    </div>
+
+    <div id="Overview" class="w3-container city">
+        <div class="medica-about-text">
+            <h2><center><span> Overview </span></center></h2>
+            <ul>
+                <li>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+                </li>
+                <li>Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover
+                    without special
+                    treatment.</li>
+            </ul>
+            <h2>How it spreads:</h2>
+            <ul>
+                <li>The virus that causes COVID-19 is mainly transmitted through droplets generated when an infected
+                    person
+                    coughs, sneezes, or exhales. These droplets are too heavy to hang in the air, and quickly fall on
+                    floors or
+                    surfaces.</li>
+                <li>You can be infected by breathing in the virus if you are within close proximity of someone who has
+                    COVID-19,
+                    or by touching a contaminated surface and then your eyes, nose or mouth.</li>
+            </ul>
+            <div class="row">
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/ov1.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/ov2.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/ov3.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/ov4.png')}}" alt="" style="width:100%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Symptoms" class="w3-container city" style="display:none">
+        <div class="medica-about-text">
+            <h2> <center><span>Symptoms </span></center></h2>
+            <p>COVID-19 affects different people in different ways. Most infected people will develop mild to moderate
+                illness and recover without hospitalization.</p>
+            <h2>Most common symptoms:</h2>
+            <ul>
+                <li>Fever</li>
+                <li>Dry cough</li>
+                <li>Tiredness</li>
+            </ul>
+            <h2>Less common symptoms:</h2>
+            <ul>
+                <li>Aches and pains</li>
+                <li>Sore throat</li>
+                <li>Diarrhoea</li>
+                <li>Headache</li>
+                <li>Conjunctivitis</li>
+                <li>Loss of taste or smell</li>
+                <li>A rash on skin, or discolouration of fingers or toes</li>
+            </ul>
+            <h2>Serious symptoms:</h2>
+            <ul>
+                <li>Difficulty breathing or shortness of breath</li>
+                <li>Chest pain or pressure</li>
+                <li>Loss of speech or movement</li>
+            </ul>
+            <h2>What to do:</h2>
+            <ul>
+                <li>Seek immediate medical attention if you have serious symptoms. Always call before visiting your
+                    doctor or
+                    health facility.</li>
+                <li>People with mild symptoms who are otherwise healthy should manage their symptoms at home.</li>
+                <li>On average it takes 5–6 days from when someone is infected with the virus for symptoms to show,
+                    however it
+                    can take up to 14 days.</li>
+            </ul>
+            <div class="row">
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/sm1.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/sm2.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/sm3.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/sm4.png')}}" alt="" style="width:100%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Prevention" class="w3-container city" style="display:none">
+        <div class="medica-about-text">
+            <h2><center> <span>Prevention </span></center></h2>
+            <p>Protect yourself and others around you by knowing the facts and taking appropriate precautions. Follow
+                advice
+                provided by your local public health agency.</p>
+            <h2>To prevent the spread of COVID-19:</h2>
+            <ul>
+                <li>Clean your hands often. Use soap and water, or an alcohol-based hand rub.</li>
+                <li>Maintain a safe distance from anyone who is coughing or sneezing.</li>
+                <li>Don’t touch your eyes, nose or mouth.</li>
+                <li>Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.</li>
+                <li>Stay home if you feel unwell.</li>
+                <li>If you have a fever, cough and difficulty breathing, seek medical attention. Call in advance.</li>
+                <li>Follow the directions of your local health authority.</li>
+                <li>Avoiding unneeded visits to medical facilities allows healthcare systems to operate more
+                    effectively,
+                    therefore protecting you and others.</li>
+            </ul>
+            <div class="row">
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/pv1.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/pv2.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/pv3.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/pv4.png')}}" alt="" style="width:100%">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Treatments" class="w3-container city" style="display:none">
+        <div class="medica-about-text">
+            <h2><center> <span>Treatments </span></center> </h2>
+            <p>To date, there are no specific vaccines or medicines for COVID-19. Treatments are under investigation,
+                and
+                will be tested through clinical trials. World Health Organization.</p>
+            <h2>Self-care:</h2>
+            <ul>
+                <li>If you feel sick you should rest, drink plenty of fluid, and eat nutritious food. Stay in a separate
+                    room
+                    from other family members, and use a dedicated bathroom if possible. Clean and disinfect frequently
+                    touched
+                    surfaces.</li>
+                <li>Everyone should keep a healthy lifestyle at home. Maintain a healthy diet, sleep, stay active, and
+                    make
+                    social contact with loved ones through the phone or internet. Children need extra love and attention
+                    from
+                    adults during difficult times. Keep to regular routines and schedules as much as possible.</li>
+                <li>It is normal to feel sad, stressed, or confused during a crisis. Talking to people you trust, such
+                    as friends
+                    and family, can help. If you feel overwhelmed, talk to a health worker or counsellor.</li>
+            </ul>
+            <h2> Medical treatments:</h2>
+            <ul>
+                <li>If you have mild symptoms and are otherwise healthy, self-isolate and contact your medical provider
+                    or a
+                    COVID-19 information line for advice.</li>
+                <li>Seek medical care if you have a fever, a cough, and difficulty breathing. Call in advance.</li>
+            </ul>
+            <div class="row">
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/tr1.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/tr2.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/tr3.png')}}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename='img/core-img/tr4.png')}}" alt="" style="width:100%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-area">
+        <div class="main-footer-area section_padding_100 bg-default">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-4 col-xl-4">
+                        <div class="footer-widget-area">
+                            <div class="footer-logo">
+                                <img src="{{url_for('static', filename='img/core-img/testifyMeLOGO1.png')}}" alt="">
+                            </div>
+                            <p>TestifyMe is a online platform for testing COVID-19.
+                                This website helps to check if a person is COVID positive or negative based on the
+                                symptoms exhibited.
+                                TestifyMe gives 100% correct result through a machine learning model based on a verified
+                                dataset of patient.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 col-xl-4">
+                        <div class="footer-widget-area">
+                            <div class="widget-title">
+                                <h6>Latest News</h6>
+                            </div>
+                            <div class="widget-blog-post">
+
+                                <div class="widget-single-blog-post d-flex">
+                                    <div class="widget-post-thumbnail pr-2">
+                                        <img src="{{url_for('static', filename='img/bg-img/xfp1.jpg.pagespeed.ic.5MXxkRnNsi.jpg')}}"
+                                            alt="">
+                                    </div>
+                                    <div class="widget-post-content">
+                                        <a href="https://economictimes.indiatimes.com/coronavirus"
+                                            target="_blank">CORONAVIRUS UPDATES</a>
+                                        <p>Apr 12, 2022</p>
+                                    </div>
+                                </div>
+
+                                <div class="widget-single-blog-post d-flex">
+                                    <div class="widget-post-thumbnail pr-2">
+                                        <img src="{{url_for('static', filename='img/bg-img/xfp2.jpg.pagespeed.ic.YJBHBHA0S9.jpg')}}"
+                                            alt="">
+                                    </div>
+                                    <div class="widget-post-content">
+                                        <a href="https://www.india.com/news/delhi/4th-wave-of-corona-in-delhi-latest-news-today-11th-april-2022-how-delhi-is-preparing-to-fight-new-xe-variant-satyendar-jain-big-statement-10-points-5332146/"
+                                            target="_blank">With COVID Cases on Rise, Is Delhi Prepared to Fight New XE
+                                            Variant?</a>
+                                        <p>Apr 12, 2022</p>
+                                    </div>
+                                </div>
+
+                                <div class="widget-single-blog-post d-flex">
+                                    <div class="widget-post-thumbnail pr-2">
+                                        <img src="{{url_for('static', filename='img/bg-img/xfp3.jpg.pagespeed.ic.Eu0eJ4upNb.jpg')}}"
+                                            alt="">
+                                    </div>
+                                    <div class="widget-post-content">
+                                        <a href="https://www.indiatoday.in/india/story/delhi-s-covid-positivity-rate-at-2-7-highest-in-last-two-months-1936241-2022-04-11"
+                                            target="_blank">Delhi’s Covid positivity rate at 2.7 %, highest in last two
+                                            months</a>
+                                        <p>Apr 11, 2022</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 col-xl-4">
+                        <div class="footer-widget-area">
+                            <div class="widget-title">
+                                <h6>Usefull links</h6>
+                            </div>
+                            <ul>
+                                <li><a class="dropdown-item" href="{{ url_for('home')}}">Home</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('update')}}">Live Update</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('symptoms')}}">Symptoms</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-footer-area">
+            <center>
+                <div>
+                    <p class="whiteText">
+                        Copyright &copy; All rights reserved | Developed By Rahul Das & Anisha Roy
+                    </p>
+                </div>
+            </center>
+        </div>
+    </footer>
+
+    <!-- API -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='js/countries.js')}}"></script>
+    <script src="{{url_for('static', filename='js/app.js')}}"></script>
+
+    <script src="{{url_for('static', filename='js/jquery/jquery-2.2.4.min.js')}}"></script>
+
+    <script
+        src="{{url_for('static', filename='js/popper.min.js%2bbootstrap.min.js.pagespeed.jc.MoQHyr7pOx.js')}}"></script>
+    <script>eval(mod_pagespeed_wARgy5NI7L);</script>
+
+    <script>eval(mod_pagespeed_G9j3MmSthz);</script>
+
+    <script src="{{url_for('static', filename='js/plugins.js')}}"></script>
+    <script src="{{url_for('static', filename='js/active.js+map-active.js.pagespeed.jc.oW5w68ylaw.js')}}"></script>
+    <script src="{{url_for('static', filename='js/active.js')}}"></script>
+    <script
+        src="{{url_for('static', filename='js/popper.min.js+bootstrap.min.js.pagespeed.jc.MoQHyr7pOx.js')}}"></script>
+
+    <script async src="../../../external.html?link=https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+    <script defer
+        src="../../../external.html?link=https://static.cloudflareinsights.com/beacon.min.js/v652eace1699HwMyHMvWFRhTJZQjNcCUwdpFVyxx417194"
+        integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
+        data-cf-beacon='{"rayId":"6e264a2f3f1a94c2","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}'
+        crossorigin="anonymous"></script>
+    <script>
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(cityName).style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
